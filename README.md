@@ -9,7 +9,22 @@ This is a Work in Progress: The code in this repository is part of an active res
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Research Context
-[Brief description of the broader research context and goals]
+TAG is an evolution of Retrieval-Augmented Generation (RAG) aimed at enabling multi-step, goal-oriented workflows in AI applications. Instead of focusing on single-turn Q&A, TAG treats each task as a first-class entity, embedding it in the same vector space as the organization’s knowledge chunks. This allows for persistent, iterative retrieval of only the most relevant information at each phase of a project.
+
+**Core Concept**
+Tasks Table: Stores tasks (with names, descriptions, domain labels, and a vector embedding).
+Knowledge Chunks Table: Houses segmented text (chunks) from corporate docs, each with a domain label and a vector embedding.
+The system retrieves chunks by comparing a task’s embedding to those of the knowledge chunks, yielding semantically relevant matches.
+**Advantages**
+- Persistent Task Context: Instead of ephemeral prompts, tasks remain in the database, enabling consistent reference across multiple steps.
+- Multi-Domain Organization: Both tables track domain_name to filter and group data, ensuring domain-appropriate retrieval.
+- Iterative Refinement: Task embeddings can be updated as the project evolves, automatically adjusting which chunks get retrieved.
+**Comparison to RAG**
+Traditional RAG focuses on single-pass retrieval for Q&A. TAG extends this by offering a multi-step, audit-friendly workflow where tasks drive retrieval at each stage.
+**Implementation Note**
+Uses pgvector for approximate nearest neighbor search, allowing rapid semantic lookups. Any RAG system can be converted to a TAG system by adding a tasks table and knowledge chunks table.
+Recommended embedding dimension typically matches your chosen LLM’s embedding output (e.g., 768).
+For a deeper dive—covering architecture, tooling, and real-world use cases—refer to the full TAG white paper by Revenant Research.
 
 ## Repository Structure
 \`\`\`
