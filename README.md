@@ -1,6 +1,6 @@
 # Revenant Research Project
 
-This repository contains code from an ongoing research project by Revenant Research (formerly Revenant AI LLC). This is not intended to be used as a standalone application, but rather serves as a component of our broader research initiatives.
+This repository contains code from an ongoing research project by Revenant Research (Revenant AI LLC). This is not intended to be used as a standalone application, but rather serves as a component of our broader research initiatives.
 
 ## ⚠️ Important Notice
 This is a Work in Progress: The code in this repository is part of an active research project and is not designed to function as a standalone application. It is being shared with the research community in the spirit of open science and collaborative development.
